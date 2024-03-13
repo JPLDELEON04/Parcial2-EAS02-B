@@ -20,7 +20,7 @@ class Cuadrado: public Figura
         this->setPerimetro;
     }
     Cuadrado(int b): Figura(b)
-    {
+    { 
         
     }
 }
@@ -39,7 +39,12 @@ class Rectangulo: public Figura
 
 class Circulo: public Figura
 {
-    Circulo(int b): Figura(b){}
+    Circulo(int b): Figura(b)
+    {
+        int r= (b/2)^2;
+        int pi = 3.1416;
+
+    }
 
 }
 
@@ -98,7 +103,7 @@ float Figura::setPerimetro(float a)
     this->p = a;
 }
 
-float Figura::getPerimetro()
+float Figura::getPerimetro(int b, int h)
 {
     this->p = b*h;
 }
