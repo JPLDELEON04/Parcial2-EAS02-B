@@ -1,16 +1,3 @@
-
-# Parcial2-EAS02
-Esta es la actividad sumativa #2 del Parcial 2. Trabaja de manera individual. Asegúrate que tu código compile en todo momento y guarda cambios constantemente.
-
-##Instrucciones
-- Haz un fork de este repositorio a tu cuenta de GitHub con correo institucional.
-- Clona el repositorio a tu computadora.
-- Tomar el código base que se muestra a continuación y resolverlo.
-
-Extra:
-- Separar el archivo en los correspondientes archivos .h y .cpp
-
-```
 #include <iostream>
 using namespace std;
 
@@ -25,6 +12,39 @@ public:
     void setPerimetro(float a);
     float getPerimetro();
 };
+
+class Cuadrado: public Figura
+{
+    Cuadrado(): Figura(b,h)
+    {
+        this->setPerimetro;
+    }
+    Cuadrado(int b): Figura(b)
+    {
+        
+    }
+}
+
+class Rectangulo: public Figura
+{
+    Rectangulo(): Figura()
+    {
+        this->setPerimetro;
+    }
+    Rectangulo(int b): Figura(b){
+
+
+    }
+}
+
+class Circulo: public Figura
+{
+    Circulo(int b): Figura(b){}
+
+}
+
+
+
 
 /*
     Implementa los constructores y funciones de la clase Figura.
@@ -59,6 +79,27 @@ int main () {
     cout << t.getPerimetro() << endl; // ~31.41592
     return 0;
 }
-```
-Notas
-Puedes hacer uso de tus trabajos pasados así como de la documentación de C++
+
+Figura::Figura()
+{
+    int h = 0;
+    int b = 0;
+    int p = 0;
+}
+
+Figura::Figura(int b, int h)
+{
+    this->b = b;
+    this->h = h;
+}
+
+float Figura::setPerimetro(float a)
+{
+    this->p = a;
+}
+
+float Figura::getPerimetro()
+{
+    this->p = b*h;
+}
+
