@@ -9,44 +9,36 @@ private:
 public:
     Figura();
     Figura(int b, int h);
-    void setPerimetro(float a);
+    float setPerimetro(float a);
     float getPerimetro();
 };
 
 class Cuadrado: public Figura
 {
-    Cuadrado(): Figura(b,h)
+    public:
+    Cuadrado(int b): Figura(b, b)
     {
-        this->setPerimetro;
-    }
-    Cuadrado(int b): Figura(b)
-    { 
-        
-    }
+    this->setPerimetro(4*b);
 }
+};
 
 class Rectangulo: public Figura
 {
-    Rectangulo(): Figura()
+    public:
+    Rectangulo(int b, int h): Figura(b, b)
     {
-        this->setPerimetro;
+        this->setPerimetro(b+b+h+h);
     }
-    Rectangulo(int b): Figura(b){
-
-
-    }
-}
-
+};
 class Circulo: public Figura
 {
-    Circulo(int b): Figura(b)
+    public:
+    Circulo(int b): Figura(b,0)
     {
-        int r= (b/2)^2;
-        int pi = 3.1416;
-
+        float per = b*3.141592;
+        this->setPerimetro(per);
     }
-
-}
+};
 
 
 
@@ -87,9 +79,9 @@ int main () {
 
 Figura::Figura()
 {
-    int h = 0;
-    int b = 0;
-    int p = 0;
+    this-> h = 0;
+    this-> b = 0;
+    this-> p = 0;
 }
 
 Figura::Figura(int b, int h)
@@ -103,8 +95,8 @@ float Figura::setPerimetro(float a)
     this->p = a;
 }
 
-float Figura::getPerimetro(int b, int h)
+float Figura::getPerimetro()
 {
-    this->p = b*h;
+    return this->p;
 }
 
